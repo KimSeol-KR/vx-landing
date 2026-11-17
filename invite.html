@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VX 체험 안내</title>
+<meta name="description" content="VX 체험 방법과 초대 코드 요청 안내. 만들기, 눌러보기, 고쳐보기, 풀어보기 순서로 15분이면 둘러볼 수 있어요.">
+<meta property="og:title" content="VX 체험 안내">
+<meta property="og:description" content="AI가 만든 웹페이지, 눌러 보고 고쳐 보고 풀어 보는 15분.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0a0a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-weight='800' font-size='15' fill='%233b82f6'%3EVX%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#0a0a0a;--line:#1c1c1f;--border:#27272a;--border2:#3f3f46;--surface:#111111;--panel:#0f0f10;--text:#fafafa;--text2:#d4d4d8;--muted:#a1a1aa;--dim:#52525b;--accent:#3b82f6;--accent2:#93c5fd;--accentbg:#0f1a2e;--str:#fcd34d;--mono:'JetBrains Mono',ui-monospace,monospace;--kr:'Noto Sans KR','Inter',sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter','Noto Sans KR',system-ui,sans-serif;font-size:16px;line-height:1.6}
+a{color:var(--accent2)}a:hover{color:#bfdbfe}
+button{font:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.mono{font-family:var(--mono)}
+.pad{padding-left:clamp(20px,4vw,56px);padding-right:clamp(20px,4vw,56px)}
+.shell{max-width:1040px;margin:0 auto;border-left:1px solid var(--line);border-right:1px solid var(--line);min-height:100vh}
+header{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;padding-top:18px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:var(--text)}
+.logo b{font-size:22px;font-weight:800;letter-spacing:.02em}.logo span{font:12px var(--mono);color:var(--muted)}
+.back{margin-left:auto;font-size:14px;color:var(--text2);text-decoration:none;padding:10px 0}
+.back:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:10px;text-decoration:none;font-size:16px;font-weight:600;cursor:pointer;border:0;transition:box-shadow .3s,transform .2s}
+.btn:hover{box-shadow:0 0 0 6px rgba(59,130,246,.18);transform:translateY(-1px)}
+.btn.blue{background:var(--accent);color:#fff}.btn.line{background:transparent;border:1px solid var(--border2);color:var(--text)}
+.btn.done{border-color:var(--accent);color:var(--accent2)}
+.hero{position:relative;padding-top:clamp(48px,7vw,88px);padding-bottom:clamp(48px,6vw,72px);border-bottom:1px solid var(--line);overflow:hidden}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(#141417 1px,transparent 1px),linear-gradient(90deg,#141417 1px,transparent 1px);background-size:48px 48px;animation:drift 14s linear infinite;pointer-events:none}
+h1{margin:0;font-family:var(--kr);font-weight:900;font-size:clamp(38px,5.4vw,72px);line-height:1.1;letter-spacing:-.045em}
+h1 .dim{color:var(--dim)}
+.caret{display:inline-block;width:.08em;height:.85em;margin-left:.08em;background:var(--accent);vertical-align:-.05em;animation:blink 1s steps(1) infinite}
+.lead{color:var(--muted)}
+section{border-bottom:1px solid var(--line)}
+.sec{padding-top:clamp(48px,7vw,80px);padding-bottom:clamp(48px,7vw,80px)}
+.open{margin:0 0 20px;font:13px var(--mono)}
+.open .t,.close{color:var(--accent)}.open .k{color:var(--accent2)}.open .s{color:var(--str)}
+.close{margin:32px 0 0;font:13px var(--mono)}
+h2{margin:0;font-family:var(--kr);font-weight:900;font-size:clamp(28px,3.6vw,44px);line-height:1.15;letter-spacing:-.035em}
+
+/* 들어가기 */
+.access{display:flex;flex-wrap:wrap;border:1px solid var(--border);border-radius:16px;background:var(--surface);overflow:hidden;margin-top:28px}
+.cell{flex:1 1 320px;min-width:0;padding:28px;display:flex;flex-direction:column;gap:10px}
+.cell+.cell{border-left:1px solid var(--border)}
+.cell .lbl{margin:0;font:12px var(--mono);color:var(--muted)}
+.cell .val{font:16px var(--mono);color:var(--text2);overflow-wrap:anywhere}
+.code{display:flex;gap:8px;align-items:center}
+.code span{display:inline-flex;align-items:center;justify-content:center;width:40px;height:52px;border:1px dashed var(--border2);border-radius:8px;font:700 22px var(--mono);color:var(--dim);animation:shimmer 2.4s ease-in-out infinite}
+.code span:nth-child(2){animation-delay:.15s}.code span:nth-child(3){animation-delay:.3s}.code span:nth-child(4){animation-delay:.45s}.code span:nth-child(5){animation-delay:.6s}.code span:nth-child(6){animation-delay:.75s}.code span:nth-child(7){animation-delay:.9s}.code span:nth-child(8){animation-delay:1.05s}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+
+/* 순서 */
+.steps{list-style:none;margin:28px 0 0;padding:0;position:relative}
+.steps::before{content:"";position:absolute;left:27px;top:28px;bottom:28px;width:2px;background:repeating-linear-gradient(var(--border) 0 8px,transparent 8px 14px)}
+.steps::after{content:"";position:absolute;left:22px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px 4px rgba(59,130,246,.55);animation:down 6s cubic-bezier(.45,0,.55,1) infinite}
+.steps li{position:relative;display:grid;grid-template-columns:56px 1fr;gap:4px 20px;padding:18px 0}
+.steps .num{grid-row:span 3;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:2px solid var(--accent);background:var(--bg);font:700 15px var(--mono);color:var(--accent2);position:relative;z-index:1;transition:background .3s,color .3s}
+.steps li:hover .num{background:var(--accent);color:#fff}
+.steps h3{margin:6px 0 0;font-size:22px;font-weight:700}
+.steps p{margin:0;color:var(--muted);max-width:62ch}
+.steps code{font:13px var(--mono);color:var(--text2);background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:0 6px}
+.tagrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.tagrow span{font:12px var(--mono);padding:3px 9px;border-radius:999px;border:1px solid var(--border);color:var(--text2)}
+
+/* 부탁 */
+.ask{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.ask div{flex:1 1 220px;padding:20px 22px;border:1px solid var(--border);border-radius:14px;background:var(--surface);transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s}
+.ask div:hover{transform:translateY(-4px);border-color:var(--accent)}
+.ask b{display:block;margin-bottom:4px}
+.ask p{margin:0;font-size:14px;color:var(--muted)}
+footer{padding-top:32px;padding-bottom:40px;font-size:13px;color:var(--muted)}
+
+.rv{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+@supports (animation-timeline: view()){.rv{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% cover 28%}}
+@keyframes drift{to{background-position:48px 48px,48px 48px}}
+@keyframes blink{50%{opacity:0}}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes reveal{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
+@keyframes shimmer{0%,100%{border-color:var(--border2);color:var(--dim)}50%{border-color:var(--accent);color:var(--accent2)}}
+@keyframes down{0%{top:22px;opacity:0}8%{opacity:1}92%{opacity:1}100%{top:calc(100% - 34px);opacity:0}}
+@media (max-width:640px){.cell+.cell{border-left:0;border-top:1px solid var(--border)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="shell">
+
+<header class="pad">
+<a class="logo" href="./"><b>VX</b><span>/* 왜 이렇게 만들었지 */</span></a>
+<a class="back" href="./">← 소개로 돌아가기</a>
+</header>
+
+<section class="hero pad">
+<div class="grid-bg" aria-hidden="true"></div>
+<div style="position:relative">
+<p class="mono" style="margin:0 0 20px;font-size:13px;color:var(--muted)">&lt;!-- 체험 안내 --&gt;</p>
+<h1>AI가 만든 웹페이지,<br><span class="dim">눌러 보고, 고쳐 보고,<br>풀어 보는 15분.</span><span class="caret" aria-hidden="true"></span></h1>
+<p class="lead" style="margin:24px 0 0;max-width:54ch;font-size:18px">한 줄로 부탁하면 AI가 웹페이지를 만들어요. 아무 곳이나 누르면 그 태그가 무엇이고 왜 썼는지 보여 주고, 그 페이지에 맞는 과제도 나와요. 막히면 정답 대신 힌트를 한 단계씩 줘요.</p>
+</div>
+</section>
+
+<section class="sec pad" id="enter">
+<p class="open"><span class="t">&lt;section</span> <span class="k">id</span>=<span class="s">"들어가기"</span><span class="t">&gt;</span></p>
+<h2>들어가려면 초대 코드가 필요해요.</h2>
+<p class="lead" style="margin:14px 0 0;max-width:56ch">코드는 공개하지 않고 메일로 보내 드려요. 아래 버튼을 누르면 요청 메일이 바로 작성돼요.</p>
+<div class="access">
+<div class="cell">
+<p class="lbl">초대 코드</p>
+<div class="code" aria-label="초대 코드는 메일로 보내 드려요"><span aria-hidden="true">·</span><span aria-hidden="true">·</span><span aria-hidden="true">·</span><span aria-hidden="true">·</span><span aria-hidden="true">·</span><span aria-hidden="true">·</span><span aria-hidden="true">·</span><span aria-hidden="true">·</span></div>
+<p class="lead" style="margin:0;font-size:14px">8자리 코드를 메일로 보내 드려요. 받은 코드는 다른 사람에게 넘기지 말아 주세요.</p>
+<div class="btns">
+<a class="btn blue" href="mailto:chj03357@naver.com?subject=VX%20%EC%B4%88%EB%8C%80%20%EC%BD%94%EB%93%9C%20%EC%9A%94%EC%B2%AD&amp;body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94.%20VX%20%EC%B4%88%EB%8C%80%20%EC%BD%94%EB%93%9C%EB%A5%BC%20%EC%9A%94%EC%B2%AD%ED%95%A9%EB%8B%88%EB%8B%A4.%0A%0A%EC%93%B0%EB%A0%A4%EB%8A%94%20%EA%B3%B3(%EA%B0%9C%EC%9D%B8%20%ED%95%99%EC%8A%B5%20%2F%20%EC%88%98%EC%97%85%20%2F%20%EA%B8%B0%ED%83%80)%3A%20%0A">초대 코드 요청 메일 쓰기</a>
+<button type="button" class="btn line" id="copyMail" data-mail="chj03357@naver.com">메일 주소 복사</button>
+</div>
+<p class="mono" style="margin:4px 0 0;font-size:13px;color:var(--muted)">chj03357@naver.com</p>
+</div>
+<div class="cell">
+<p class="lbl">서비스 주소</p>
+<a class="val" href="https://vx-app-production.up.railway.app/" target="_blank" rel="noopener">vx-app-production.up.railway.app</a>
+<p class="lead" style="margin:0;font-size:14px">코드를 받으면 이 주소에서 닉네임과 코드를 넣고 시작해요. 가입이나 설치는 없어요.</p>
+<div class="btns"><a class="btn line" href="https://vx-app-production.up.railway.app/" target="_blank" rel="noopener">VX 열기 <span aria-hidden="true">→</span></a></div>
+</div>
+</div>
+<p class="close">&lt;/section&gt;</p>
+</section>
+
+<section class="sec pad" id="how">
+<p class="open"><span class="t">&lt;section</span> <span class="k">id</span>=<span class="s">"순서"</span><span class="t">&gt;</span></p>
+<h2 class="rv">이 순서로 해 주세요.</h2>
+<ol class="steps">
+<li class="rv"><span class="num">01</span><h3>만들기</h3>
+<p>닉네임과 초대 코드를 넣고, 만들고 싶은 페이지를 한 줄로 적어요. 예: <code>동네 빵집 소개 페이지</code>. 확인 카드가 나오면 골라 주거나 "그냥 진행"을 누르세요. 만드는 데 1~2분 걸려요.</p></li>
+<li class="rv"><span class="num">02</span><h3>눌러보기</h3>
+<p>페이지에서 궁금한 곳을 눌러 보세요. 오른쪽에 그 태그가 무엇이고 왜 그렇게 만들었는지 나와요. 세 군데 이상 눌러 주세요.</p></li>
+<li class="rv"><span class="num">03</span><h3>고쳐보기</h3>
+<p>왼쪽 "따라 하기 과제"를 골라 지시대로 코드를 고치고 ▶ 적용, 그다음 "확인하기"를 누르세요. 고친 화면에서도 요소를 눌러 태그 정보를 볼 수 있어요.</p>
+<div class="tagrow"><span>HTML</span><span>CSS</span><span>JS</span></div></li>
+<li class="rv"><span class="num">04</span><h3>풀어보기</h3>
+<p>분야와 난이도를 골라 문제를 받아요. 목표만 나오니 방법을 스스로 찾아 고친 뒤 "확인하기". 막히면 아래 힌트 탭에서 한 단계씩 받고, 원리 힌트를 본 뒤에는 "질문하기"로 AI에게 직접 물어볼 수 있어요. 정답은 몇 분 뒤에 열려요. 확인 결과가 이상하면 "확인이 이상해요"를 눌러 주세요.</p>
+<div class="tagrow"><span>쉬움</span><span>보통</span><span>어려움</span></div></li>
+</ol>
+<p class="close">&lt;/section&gt;</p>
+</section>
+
+<section class="sec pad" id="please">
+<p class="open"><span class="t">&lt;section</span> <span class="k">id</span>=<span class="s">"부탁"</span><span class="t">&gt;</span></p>
+<h2 class="rv">부탁드려요.</h2>
+<div class="ask">
+<div class="rv"><b>노트북으로</b><p>크롬을 권해요. 휴대폰에서는 코드 고치기가 아직 불편할 수 있어요.</p></div>
+<div class="rv"><b>닉네임만</b><p>실명·학번·이메일은 넣지 마세요.</p></div>
+<div class="rv"><b>헷갈린 곳 한 줄</b><p>다 쓰고 나서 헷갈렸던 곳을 한 줄만 메일로 보내 주세요.</p></div>
+<div class="rv"><b>코드는 혼자만</b><p>받은 초대 코드는 다른 사람에게 넘기지 말아 주세요.</p></div>
+</div>
+<p class="close">&lt;/section&gt;</p>
+</section>
+
+<footer class="pad">
+<p style="margin:0">기록은 닉네임, 만든 페이지, 누른 곳, 힌트 단계만 남고 시범·학기가 끝나면 지워요.</p>
+<p style="margin:8px 0 0">© 2026 VX · <a href="./">소개 페이지</a> · <a href="mailto:chj03357@naver.com">chj03357@naver.com</a></p>
+</footer>
+
+</div>
+<script>
+(function () {
+  var b = document.getElementById('copyMail');
+  b.addEventListener('click', function () {
+    var text = b.dataset.mail;
+    function done(msg) { b.textContent = msg; b.classList.add('done'); setTimeout(function () { b.textContent = '메일 주소 복사'; b.classList.remove('done'); }, 2000); }
+    try { navigator.clipboard.writeText(text).then(function () { done('복사했어요'); }, function () { done(text); }); }
+    catch (e) { done(text); }
+  });
+})();
+</script>
+</body>
+</html>
